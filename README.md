@@ -1,4 +1,4 @@
-## Multi-omicGliomaMR
+## Multi-omic Glioma MR
 The contents of this repository relate to the pre-print manuscript 'Multi-omics Mendelian randomisation using expression, protein and splicing quantitative trait loci to identify novel drug targets associated with risk of gliomagenesis' by Zak A Thornton, Lily J Andrews, Huiling Zhao, Jie Zheng, Jamie Robinson & Kathreena Kurian.<p>
 ### Abstract
 **Background:** Genetically predicted changes in molecular traits are associated with genetic liability to glioma risk. We sought to identify and provide evidence for the prioritisation of these traits using a combined two-sample Mendelian randomisation and colocalisation pipeline.
