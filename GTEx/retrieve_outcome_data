@@ -1,0 +1,9 @@
+cd ~/Glioma/
+
+for file in ~/QTL/exposure/GTEx/data/amygdala/*SNP.txt; do
+	echo -e "SNP\tCHROMOSOME\tPOSITION\tA1\tA2\tFREQA1\tBETA\tSE\tP\tDISEASE" > "${file}_outcome"
+	awk -F'\t' 'NR==FNR { c[$1]++; next } $1 in c { print $0"\tall"; next }' $file all.meta >> "${file}_outcome"
+	awk -F'\t' 'NR==FNR { c[$1]++; next } $1 in c { print $0"\tgbm"; next }' $file gbm.meta >> "${file}_outcome"
+	awk -F'\t' 'NR==FNR { c[$1]++; next } $1 in c { print $0"\tnongbm"; next }' $file nongbm.meta >> "${file}_outcome"
+	mv "${file}_outcome" ~/QTL/outcome/GTEx/amygdala/MR/am_SNP_outcome.txt
+done
