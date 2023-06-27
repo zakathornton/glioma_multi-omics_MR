@@ -6,7 +6,7 @@ library(TwoSampleMR)
 
 #load exposure data
 
-data<-read.delim("substantia_nigra_raw.txt", sep="\t")
+data<-read.delim("amygdala_raw.txt", sep="\t")
 
 #replace chromosome with just chromosome number
 
@@ -40,7 +40,7 @@ data$N<-114
 
 #save cleaned raw data
 
-write.table(data,"substantia_nigra_raw.txt", quote = F, row.names = F)
+write.table(data,"amygdala_raw.txt", quote = F, row.names = F)
 
 #apply a genome-wide association filter
 
@@ -52,8 +52,8 @@ SNP<-data$SNP
 
 #save the new dataframe
 
-write.table(data,"substantia_nigra_data.txt", quote = F, row.names = F)
+write.table(data,"amygdala_data.txt", quote = F, row.names = F)
 
 #save the list of SNPs for extraction from outcome data
 
-write.table(SNP, "sc_SNP.txt", quote = F, row.names = F, col.names = F)
+write.table(SNP, "am_SNP.txt", quote = F, row.names = F, col.names = F)
