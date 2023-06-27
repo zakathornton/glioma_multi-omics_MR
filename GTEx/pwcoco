@@ -1,0 +1,12 @@
+cd ~/QTL/scripts/GTEx/pwcoco/
+
+./pwcoco/build/pwcoco \
+	 --bfile ~/1000Genomes/GRCh37 \
+	 --chr 20 \
+	 --maf 0.01 \
+	 --init_h4 100 \
+	 --out_cond \
+	 --sum_stats1 ~/QTL/exposure/GTEx/amygdala/pwcoco/RTEL1/am_RTEL1_SNP.txt \
+	 --sum_stats2 ~/QTL/outcome/GTEx/amygdala/pwcoco/RTEL1/am_RTEL1_SNP_outcome_gbm.txt \
+	 --out ~/QTL/exposure/GTEx/amygdala/pwcoco/RTEL1/am_RTEL1_gbm_pwcoco \
+	 /
