@@ -6,7 +6,7 @@ library(ggrepel)
 library(dplyr)
 library(qqman)
 
-#load MR results
+#load compiled MR results
 
 data<-read.delim("~/Documents/University/PhD Population Health Sciences/QTL/Exposure/GTEx/MR/comp_0.001_mr_res.txt")
 
