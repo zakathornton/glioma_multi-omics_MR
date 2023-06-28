@@ -6,7 +6,7 @@ library(TwoSampleMR)
 
 #load exposure data
 
-exp_data<-read.delim("~/Documents/University/PhD Population Health Sciences/QTL/Exposure/GTEx/Data/Amygdala/amygdala_data.txt", sep = " ")
+exp_data<-read.delim("amygdala_data.txt", sep = " ")
 
 #filter by gene
 
@@ -50,5 +50,5 @@ res$flag<-res$pval<(0.05/res$nsnp)
 
 #save the results dataframe
 
-write.table(res,"~/Documents/University/PhD Population Health Sciences/QTL/Exposure/GTEx/Adhoc Analysis/mr_res_LBD.txt",
+write.table(res,"mr_res_LBD.txt",
             row.names=F, quote=F)
