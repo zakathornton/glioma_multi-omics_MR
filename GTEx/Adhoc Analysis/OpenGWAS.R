@@ -6,7 +6,7 @@ library(TwoSampleMR)
 
 #load exposure data
 
-exp_data<-read.delim("~/Documents/University/PhD Population Health Sciences/QTL/Exposure/GTEx/Data/Cerebellum/cerebellum_data.txt", sep = " ")
+exp_data<-read.delim("~/Documents/University/PhD Population Health Sciences/QTL/Exposure/GTEx/Data/Amygdala/amygdala_data.txt", sep = " ")
 
 #filter by gene
 
@@ -28,7 +28,9 @@ out_data<-extract_outcome_data(outcomes = 'ebi-a-GCST90001390', snps = exp_data$
 
 #format outcome data
 
-out_data<-format_data(out_data, type="outcome", header=T, snp_col="SNP", beta_col="beta.outcome", se_col="se.outcome", effect_allele_col="effect_allele.outcome", other_allele_col="other_allele.outcome", pval_col="pval.outcome", phenotype_col="outcome", eaf_col="eaf.outcome")
+out_data<-format_data(out_data, type="outcome", header=T, snp_col="SNP", beta_col="beta.outcome", se_col="se.outcome",
+                      effect_allele_col="effect_allele.outcome", other_allele_col="other_allele.outcome", pval_col="pval.outcome",
+                      phenotype_col="outcome", eaf_col="eaf.outcome")
 
 #harmonise strands
 
@@ -48,4 +50,5 @@ res$flag<-res$pval<(0.05/res$nsnp)
 
 #save the results dataframe
 
-write.table(res,"~/Documents/University/PhD Population Health Sciences/QTL/Exposure/GTEx/Adhoc Analysis/mr_res_LBD.txt", row.names=F, quote=F)
+write.table(res,"~/Documents/University/PhD Population Health Sciences/QTL/Exposure/GTEx/Adhoc Analysis/mr_res_LBD.txt",
+            row.names=F, quote=F)
