@@ -20,8 +20,7 @@ data$labelpositionTissue=rep(0.002,times=nrow(data))
 
 #order the data by gene and tissue (alphabetically)
 
-attach(data)
-data<-data[order(Tissue,Gene),]
+data<-data[order(data$`Odds Ratio`, decreasing = TRUE),]
 
 #create table position for each entry
 
