@@ -3,7 +3,7 @@
 ### Data is available from https://gtexportal.org/home/datasets - GTEx sQTL v8
 
 ## Step 1 - Clean exposure data \\\ Data/data_cleaning_exposure.R
-Clean the raw dataset to ensure all data is available for MR analysis, then apply a genome-wide associtation p-value filter (5*10^-8)
+Clean the raw dataset to ensure all data is available for MR analysis, then apply a genome-wide associtation p-value filter (P > 5E-08)
 
 ## Step 2 - Clean outcome data \\ Data/data_cleaning_outcome
 Extract the SNPs identifed in step 1 in the glioma (outcome) data.
