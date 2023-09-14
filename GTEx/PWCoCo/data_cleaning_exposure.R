@@ -5,7 +5,7 @@ library(tidyr)
 
 #load data
 
-data<-read.delim("~/Documents/University/PhD Population Health Sciences/QTL/Exposure/GTEx/PWCoCo/Amygdala/RTEL1/am_RTEL1_SNP.txt", sep=",")
+data<-read.delim("am_RTEL1_SNP.txt", sep=",")
 
 #add sample size
 
@@ -27,5 +27,4 @@ colnames(data)[7]<-"P"
 
 #save the new dataset
 
-write.table(data, "~/Documents/University/PhD Population Health Sciences/QTL/Exposure/GTEx/PWCoCo/Amygdala/RTEL1/am_RTEL1_SNP.txt",
-            quote = F, row.names = F)
+write.table(data, "am_RTEL1_SNP.txt", quote = F, row.names = F)
