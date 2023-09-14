@@ -6,7 +6,7 @@ library(TwoSampleMR)
 
 #load exposure data
 
-exp_data<-read.csv("~/QTL/Exposure/GTEx/Data/Amygdala/amygdala_data.txt", sep=" ")
+exp_data<-read.delim("amygdala_data.txt", sep=" ")
 
 #Filter by gene(s) of interest
 
@@ -15,7 +15,7 @@ exp_data<-exp_data[exp_data$GENE%in%c("RTEL1"),]
 #format exposure data
 
 exp_data<-format_data(exp_data,type="exposure", header=T, snp_col="SNP", beta_col="BETA", se_col="SE", effect_allele_col="A1",
-                      other_allele_col="A2", pval_col="P", samplesize_col="N", phenotype_col="GENE", eaf_col="EAF")
+                      other_allele_col="A2", pval_col="P", samplesize_col="N", phenotype_col="GENE", eaf_col="FREQA1")
 
 #clump SNPs
 
@@ -27,7 +27,8 @@ out_data<-read.delim("~/QTL/Outcome/GTEx/Amygdala/MR/am_SNP_outcome.txt")
 
 #format outcome data
 
-out_data<-format_data(out_data, type="outcome", header=T, snp_col="SNP", beta_col="BETA", se_col="SE", effect_allele_col="A1", other_allele_col="A2", pval_col="P", phenotype_col="DISEASE", eaf_col="FREQA1")
+out_data<-format_data(out_data, type="outcome", header=T, snp_col="SNP", beta_col="BETA", se_col="SE",effect_allele_col="A1",
+                      other_allele_col="A2", pval_col="P", phenotype_col="DISEASE", eaf_col="FREQA1")
 
 #harmonise data
 
@@ -40,8 +41,8 @@ data$units.outcome<-"log odds"
 
 #add sample size, ncase and ncontrol, depending on phenotype
 
-data$samplesize.outcome<-ifelse(data$outcome=="all",30686,ifelse(data$outcome=="gbm",24381,24495))
-data$ncase.outcome<-ifelse(data$outcome=="all",12496,ifelse(data$outcome=="gbm",6191,6305))
+data$samplesize.outcome<-ifelse(data$outcome=="all",30686,ifelse(data$outcome=="gbm",24381,24009))
+data$ncase.outcome<-ifelse(data$outcome=="all",12496,ifelse(data$outcome=="gbm",6191,5819))
 data$ncontrol.outcome<-18190
 
 #perform steiger filtering
@@ -50,4 +51,4 @@ res<-steiger_filtering(data)
 
 #save the results data frame
 
-write.table(res, "~/QTL/Exposure/GTEx/Steiger/Amygdala/am_steig.txt", row.names = F, quote = F)
+write.table(res, "am_steig.txt", row.names = F, quote = F)
