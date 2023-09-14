@@ -23,7 +23,7 @@ exp_data<-clump_data(exp_data,clump_r2=0.001)
 
 #load outcome data
 
-out_data<-read.delim("~/QTL/Outcome/GTEx/Amygdala/MR/am_SNP_outcome.txt")
+out_data<-read.delim("am_SNP_outcome.txt")
 
 #format outcome data
 
