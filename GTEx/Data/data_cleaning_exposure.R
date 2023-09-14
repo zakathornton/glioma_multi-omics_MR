@@ -6,7 +6,7 @@ library(TwoSampleMR)
 
 #load exposure data
 
-data<-read.delim("amygdala_raw.txt", sep="\t")
+data<-read.delim("Brain_Amygdala.v8.sgenes.txt", sep="\t")
 
 #replace chromosome with just chromosome number
 
@@ -16,6 +16,11 @@ data$chr<-as.numeric(data$chr)
 #make variant position numeric
 
 data$variant_pos<-as.numeric(data$variant_pos)
+
+# If ref_factor is -1, swap beta and maf
+
+data$maf<-ifelse(data$ref_factor==-1, 1-data$maf, data$maf)
+data$slope<-ifelse(data$ref_factor==-1, data$slope*-1, data$slope)
 
 #Filter for data needed then re-order
 
@@ -32,7 +37,7 @@ colnames(data)[6]<-"A2"
 colnames(data)[7]<-"BETA"
 colnames(data)[8]<-"SE"
 colnames(data)[9]<-"P"
-colnames(data)[10]<-"EAF"
+colnames(data)[10]<-"FREQA1"
 
 #add the sample size.
 
