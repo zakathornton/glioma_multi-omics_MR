@@ -11,7 +11,7 @@ exp_data<-read.delim("amygdala_data.txt", sep = " ")
 #format exposure data
 
 exp_data<-format_data(exp_data,type="exposure", header=T, snp_col="SNP", beta_col="BETA", se_col="SE", effect_allele_col="A1",
-                      other_allele_col="A2", pval_col="P", samplesize_col="N", phenotype_col="GENE", eaf_col="EAF")
+                      other_allele_col="A2", pval_col="P", samplesize_col="N", phenotype_col="GENE", eaf_col="FREQA1")
 
 #clump SNPs
 
@@ -40,4 +40,4 @@ res<-generate_odds_ratios(res)
 
 #save results
 
-write.table(res, "am_0.001_mr_res.txt", sep = "\t" row.names=F, quote=F)
+write.table(res, "am_mr_res.txt", sep = "\t" row.names=F, quote=F)
