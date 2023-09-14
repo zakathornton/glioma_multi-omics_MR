@@ -5,16 +5,15 @@ library(tidyr)
 
 #load outcome data
 
-data<-read.delim("~/Documents/University/PhD Population Health Sciences/QTL/Outcome/GTEx/Amygdala/PWCoCo/RTEL1/am_RTEL1_SNP_outcome.txt",
-                 sep = "")
+data<-read.delim("am_RTEL1_SNP_outcome.txt", sep = "")
 
 #add sample sizes
 
-data$N<-ifelse(data$DISEASE=="all",30686,ifelse(data$DISEASE=="gbm",24381,24495))
+data$N<-ifelse(data$DISEASE=="all",30686,ifelse(data$DISEASE=="gbm",24381,24009))
 
 #add case sizes
 
-data$case<-ifelse(data$DISEASE=="all",12496,ifelse(data$DISEASE=="gbm",6191,6305))
+data$case<-ifelse(data$DISEASE=="all",12496,ifelse(data$DISEASE=="gbm",6191,5819))
 
 #remove the disease phenotype
 
@@ -28,19 +27,16 @@ data<-data[c(1,4,5,6,7,8,9,10,11)]
 
 data_all<-data[data$N==30686,]
 data_gbm<-data[data$N==24381,]
-data_nongbm<-data[data$N==24495,]
+data_nongbm<-data[data$N==24009,]
 
 #save the dataframe (all)
 
-write.table(data_all,"~/Documents/University/PhD Population Health Sciences/QTL/Outcome/GTEx/PWCoCo/RTEL1/am_RTEL1_SNP_outcome_all.txt",
-            sep=" ", row.names = F, quote=F)
+write.table(data_all,"am_RTEL1_SNP_outcome_all.txt", sep=" ", row.names = F, quote=F)
 
 #save the dataframe (gbm)
 
-write.table(data_gbm,"~/Documents/University/PhD Population Health Sciences/QTL/Outcome/GTEx/PWCoCo/RTEL1/am_RTEL1_SNP_outcome_gbm.txt",
-            sep=" ", row.names = F, quote=F)
+write.table(data_gbm,"am_RTEL1_SNP_outcome_gbm.txt", sep=" ", row.names = F, quote=F)
 
 #save the dataframe (non-gbm)
 
-write.table(data_nongbm,"~/Documents/University/PhD Population Health Sciences/QTL/Outcome/GTEx/PWCoCo/RTEL1/am_RTEL1_SNP_outcome_nongbm.txt",
-            sep=" ", row.names = F, quote=F)
+write.table(data_nongbm,"am_RTEL1_SNP_outcome_nongbm.txt", sep=" ", row.names = F, quote=F)
