@@ -1,8 +1,4 @@
 
-#clear global environment
-
-rm(list=ls(all=TRUE))
-
 #load modules
 
 library(ieugwasr)
