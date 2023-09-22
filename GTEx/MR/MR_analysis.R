@@ -80,4 +80,4 @@ res<-generate_odds_ratios(res)
 
 #save results.
 
-write.table(res, "na_mr_res_NEW.txt", sep="\t", col.names=T, row.names=F, quote=F)
+write.table(res, "na_mr_res.txt", sep="\t", col.names=T, row.names=F, quote=F)
