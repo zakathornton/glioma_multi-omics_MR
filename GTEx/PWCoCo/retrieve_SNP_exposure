@@ -1,6 +1,0 @@
-cd ~/QTL/exposure/GTEx/data/amygdala/
-
-echo -e "phenotype_id\tvariant_id\ttss_distance\tma_samples\tma_count\tmaf\tpval_nominal\tslope\tslope_se" > ../../pwcoco/RTEL1/am_RTEL1_SNP.txt
-grep ENSG00000118096 Brain_amygdala.v8.sgenes.txt >> ../../pwcoco/RTEL1/am_RTEL1_SNP.txt
-awk '{print $2}' ../../pwcoco/RTEL1/am_RTEL1_SNP.txt > ../../pwcoco/RTEL1/am_RTEL1_SNPs.txt
-sed -i '1d' ../../pwcoco/RTEL1/am_RTEL1_SNPs.txt
