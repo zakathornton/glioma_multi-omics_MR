@@ -16,7 +16,7 @@ data$pval<-as.numeric(data$pval)
 
 #create variable for the results which meet bonferroni correction
 
-signif<-data[data$pval<2.10E-06,]
+signif<-data[data$pval<1.11E-05,]
 
 #create a vector of all the unique genes in the dataset
 
@@ -58,7 +58,7 @@ data<-data[!(data$chromosome_name==6 & data$start_position > 29000000 & data$end
 
 png("~/Documents/University/PhD Population Health Sciences/QTL/Exposure/GTEx/Figures/GTEx_manhattan_plot.png",
     width = 2000, height = 1000, pointsize = 18)
-manhattan(data, chr = "chromosome_name", bp = "start_position", snp = "exposure", p = "pval", logp = T, suggestiveline = -log10(2.10E-06),
+manhattan(data, chr = "chromosome_name", bp = "start_position", snp = "exposure", p = "pval", logp = T, suggestiveline = -log10(1.11E-05),
     genomewideline = F, annotateTop = TRUE, main="Manhattan Plot of Mendelian Randomisation Results in 13 Brain Tissues (sQTL)",
     cex=0.6, cex.axis=0.9, ylim=c(0,50), col = c("blue","orange"))
 dev.off()
