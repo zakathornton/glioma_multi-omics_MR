@@ -23,7 +23,7 @@ Clean the exposure SNPs for PWCoCo
 
 
 ## Step 9 - PWCoCo - [PWCoCo/pwcoco]
-
+Perform pair-wise conditional analysis and colocalisation.
 
 ## Step 10 - Steiger Filtering - [Steiger Filtering/
 
@@ -32,5 +32,5 @@ Clean the exposure SNPs for PWCoCo
 
 
 ## Step 12 - Forest Plot [Figures/Forest Plot.R]
-
+Create a forest plot for the robust results generated from all tissues.
 
