@@ -39,7 +39,7 @@ colnames(data)[8]<-"SE"
 colnames(data)[9]<-"P"
 colnames(data)[10]<-"FREQA1"
 
-#add the sample size.
+#manually add the sample size.
 
 data$N<-114
 
