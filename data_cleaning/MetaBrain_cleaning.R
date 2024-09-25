@@ -4,7 +4,7 @@ library(tidyr)
 
 ## Load exposure data
 
-data<-read.delim("~/Documents/University/PhD Population Health Sciences/QTL/Exposure/MetaBrain/Data/Basal Ganglia/basal_ganglia_raw.txt", sep = " ")
+data<-read.delim("basal_ganglia_raw.txt", sep = " ")
 
 ## Separate chr, bp, rsid and allele
 
@@ -45,17 +45,6 @@ write.table(data,"~/Documents/University/PhD Population Health Sciences/QTL/Expo
 
 data<-data[data$P<5E-08,]
 
-## Extract a list of SNPs
-
-SNP<-data$SNP
-
 ## Save the new dataframe
 
-write.table(data,"~/Documents/University/PhD Population Health Sciences/QTL/Exposure/MetaBrain/Data/Basal Ganglia/basal_ganglia_data.txt", quote=F, row.names = F)
-```
-
-## Save the list of SNPs for extraction from outcome data
-
-```{r}
-write.table(SNP, "~/Documents/University/PhD Population Health Sciences/QTL/Exposure/MetaBrain/Data/Basal Ganglia/bg_SNP.txt", quote = F, row.names = F, col.names = F)
-```
+write.table(data,"basal_ganglia_data.txt", quote=F, row.names = F)
