@@ -8,7 +8,7 @@ library(VariantAnnotation)
 library(dplyr)
 library(genetics.binaRies)
 
-## 
+## Load plink, bcftools and the reference panel
 
 gwasvcf::set_plink("/mnt/storage/software/apps/Plink-1.90/plink")
 gwasvcf::set_bcftools()
