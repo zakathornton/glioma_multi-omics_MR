@@ -18,7 +18,7 @@ ldfile<-"EUR"
 
 exp_data<-read.delim("substantia_nigra_data.txt", header=T, sep=" ")
 exp_data<-exp_data[exp_data$GENE%in%c("SLC8A1"),]
-exp_data<-format_data(exp_data,type="exposure", header=T, snp_col="SNP", beta_col="BETA", se_col="SE", effect_allele_col="A1", other_allele_col="A2", pval_col="P", samplesize_col="N", phenotype_col="GENE$
+exp_data<-format_data(exp_data,type="exposure", header=T, snp_col="SNP", beta_col="BETA", se_col="SE", effect_allele_col="A1", other_allele_col="A2", pval_col="P", samplesize_col="N", phenotype_col="GENE")
 
 ## Look for the exact SNPs, or proxies if not available.
 
