@@ -46,7 +46,7 @@ flt_data <- flt_data |>
 
 ## Pick out genes of interest
 
-dat<-flt_data[flt_data$Gene%in%c("CDKN2B","EGFR","CEP192","FAIM","D2HGDH","IDH1","HBEGF","HEATR3","GALNT6","RTEL1","MDM4","JAK1","PICK1","RAVER2","TERT","SLC8A1","PHLDB1"),]
+dat<-flt_data[flt_data$Gene%in%c("CDKN2B","EGFR","CEP192","FAIM","D2HGDH","IDH1","HBEGF","HEATR3","GALNT6","RTEL1","MDM4","JAK1","PICK1","RAVER2","TERT","SLC8A1","PHLDB1","TREH"),]
 
 ## Save the table
 
