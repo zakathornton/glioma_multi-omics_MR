@@ -3,6 +3,10 @@
 library(ieugwasr)
 library(TwoSampleMR)
 
+#set up the api
+
+options(ieugwasr_api = 'gwas-api.mrcieu.ac.uk/')
+
 ## Load exposure data
 
 exp_data<-read.delim("hippocampus_data.txt", sep = " ")
@@ -21,7 +25,7 @@ exp_data<-clump_data(exp_data,clump_r2=0.001)
 
 ## Load outcome data for trait of interest from OpenGWAS API
 
-out_data<-extract_outcome_data(outcomes = 'ebi-a-GCST90002412', snps = exp_data$SNP, proxies = T, rsq=0.8)
+out_data<-extract_outcome_data(outcomes = c('ebi-a-GCST90002412','ieu-a-1283','ukb-b-20208','ukb-b-110','ukb-b-16702','ukb-b-17219','ukb-b-4601'), snps = exp_data$SNP, proxies = T, rsq=0.8)
 
 ## Format outcome data
 
@@ -45,4 +49,4 @@ res$flag<-res$pval<(0.05/res$nsnp)
 
 ## Save the results dataframe
 
-write.table(res,"mr_res_ldlc2.txt", row.names=F, quote=F, sep = "\t")
+write.table(res,"mr_res_all.txt", row.names=F, quote=F, sep = "\t")
